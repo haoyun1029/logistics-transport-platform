@@ -1,0 +1,5 @@
+[
+  {"sampleId":"S1","originCity":"TEST_A","destinationCity":"TEST_B","plan":{"travelTime":120,"distance":110,"fuel":33},"candidate":{"travelTime":90,"distance":90,"fuel":27}},
+  {"sampleId":"S2","originCity":"TEST_A","destinationCity":"TEST_B","plan":{"travelTime":100,"distance":100,"fuel":30},"candidate":{"travelTime":80,"distance":90,"fuel":26}},
+  {"sampleId":"S3","originCity":"TEST_A","destinationCity":"TEST_B","plan":{"travelTime":110,"distance":105,"fuel":32},"candidate":{"travelTime":95,"distance":100,"fuel":29}}
+]

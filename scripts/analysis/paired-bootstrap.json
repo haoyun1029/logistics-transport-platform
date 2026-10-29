@@ -1,0 +1,88 @@
+{
+  "analysisVersion": "PAIRED_BOOTSTRAP_V1",
+  "sampleCount": 3,
+  "od": {
+    "originCity": "TEST_A",
+    "destinationCity": "TEST_B"
+  },
+  "lowerIsBetter": true,
+  "bootstrap": {
+    "iterations": 300,
+    "seed": 20261024,
+    "interval": "percentile 95%"
+  },
+  "records": [
+    {
+      "sampleId": "S1",
+      "originCity": "TEST_A",
+      "destinationCity": "TEST_B",
+      "travelTime": -30.0,
+      "travelTimePercentChange": -25.0,
+      "distance": -20.0,
+      "distancePercentChange": -18.181818181818183,
+      "fuel": -6.0,
+      "fuelPercentChange": -18.181818181818183
+    },
+    {
+      "sampleId": "S2",
+      "originCity": "TEST_A",
+      "destinationCity": "TEST_B",
+      "travelTime": -20.0,
+      "travelTimePercentChange": -20.0,
+      "distance": -10.0,
+      "distancePercentChange": -10.0,
+      "fuel": -4.0,
+      "fuelPercentChange": -13.333333333333334
+    },
+    {
+      "sampleId": "S3",
+      "originCity": "TEST_A",
+      "destinationCity": "TEST_B",
+      "travelTime": -15.0,
+      "travelTimePercentChange": -13.636363636363635,
+      "distance": -5.0,
+      "distancePercentChange": -4.761904761904762,
+      "fuel": -3.0,
+      "fuelPercentChange": -9.375
+    }
+  ],
+  "summary": {
+    "travelTime": {
+      "delta": {
+        "mean": -21.666666666666668,
+        "lower95": -30.0,
+        "upper95": -15.0
+      },
+      "percentChange": {
+        "mean": -19.545454545454543,
+        "lower95": -25.0,
+        "upper95": -13.636363636363635
+      }
+    },
+    "distance": {
+      "delta": {
+        "mean": -11.666666666666666,
+        "lower95": -20.0,
+        "upper95": -5.0
+      },
+      "percentChange": {
+        "mean": -10.981240981240981,
+        "lower95": -18.181818181818183,
+        "upper95": -4.761904761904762
+      }
+    },
+    "fuel": {
+      "delta": {
+        "mean": -4.333333333333333,
+        "lower95": -6.0,
+        "upper95": -3.0
+      },
+      "percentChange": {
+        "mean": -13.630050505050505,
+        "lower95": -18.181818181818183,
+        "upper95": -9.375
+      }
+    }
+  },
+  "limitation": "Exploratory paired analysis; small samples and simulated observations cannot prove fleet-wide superiority."
+}

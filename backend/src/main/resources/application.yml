@@ -1,0 +1,57 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  config:
+    import: optional:file:../.env[.properties]
+
+  application:
+    name: logistics-platform
+
+  jackson:
+    time-zone: Asia/Shanghai
+
+  datasource:
+    url: jdbc:mysql://${DB_HOST:192.168.146.128}:${DB_PORT:3306}/${DB_NAME:logistics_system}?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: ${DB_USERNAME:logistics_app}
+    password: ${DB_PASSWORD:change_me}
+    hikari:
+      connection-timeout: 3000
+      maximum-pool-size: 8
+      initialization-fail-timeout: -1
+
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:${app.services.host}:${app.services.kafka-port}}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: false
+
+app:
+  bootstrap-token: ${APP_BOOTSTRAP_TOKEN:}
+  demo-mode:
+    enabled: ${DEMO_MODE:false}
+  osrm:
+    endpoint: ${OSRM_ROAD_ENDPOINT:https://router.project-osrm.org/route/v1/driving}
+  amap:
+    web-service-key: ${AMAP_WEB_SERVICE_KEY:}
+    driving-endpoint: ${AMAP_DRIVING_ENDPOINT:https://restapi.amap.com/v3/direction/driving}
+    truck-endpoint: ${AMAP_TRUCK_ENDPOINT:https://restapi.amap.com/v4/direction/truck}
+  mongo:
+    uri: ${MONGO_URI:mongodb://127.0.0.1:27018/?serverSelectionTimeoutMS=1200}
+    database: ${MONGO_DATABASE:logistics_system}
+    task-id: ${MONGO_TASK_ID:DEMO-2026-002}
+  hdfs:
+    web-url: ${HDFS_WEB_URL:http://192.168.146.128:9870}
+    latest-manifest: ${HDFS_LATEST_MANIFEST:/logistics/transport-statistics/latest.json}
+    data-http-port: ${HDFS_DATA_HTTP_PORT:9864}
+    statistics-path: ${HDFS_STATISTICS_PATH:/logistics/transport-statistics/export_date=2026-10-24/run=20261024-demo/od-statistics.csv}
+  services:
+    host: ${SERVICE_HOST:${DB_HOST:192.168.146.128}}
+    kafka-port: ${KAFKA_PORT:9092}
+    flink-port: ${FLINK_PORT:8081}
+    mysql-port: ${MYSQL_PORT:${DB_PORT:3306}}
+    hdfs-port: ${HDFS_RPC_PORT:8020}
+  kafka:
+    gps-topic: ${KAFKA_GPS_TOPIC:logistics.gps.raw}

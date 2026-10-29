@@ -1,0 +1,33 @@
+{
+  "routes": [
+    {
+      "routeId": "REPLACE_WITH_ROUTE_ID",
+      "originCity": "REPLACE_WITH_PREFECTURE_CITY",
+      "destinationCity": "REPLACE_WITH_PREFECTURE_CITY",
+      "routeStatus": "PENDING",
+      "segments": [
+        {
+          "sequence": 1,
+          "fromCity": "REPLACE_WITH_CITY",
+          "toCity": "REPLACE_WITH_ADJACENT_CITY",
+          "roadName": "REPLACE_WITH_ROAD_NAME",
+          "roadType": "REPLACE_WITH_ROAD_TYPE",
+          "distanceKm": null,
+          "estimatedMinutes": null,
+          "geometry": {"coordinateSystem": "WGS84", "coordinates": []},
+          "mapRequest": {"source": "", "requestedAt": "", "parameters": {}},
+          "mapResponse": {"status": "", "rawFile": "", "sha256": ""},
+          "truckEvidence": {
+            "sourceUrl": "",
+            "sourceTitle": "",
+            "checkedAt": "",
+            "applicableVehicle": "",
+            "conclusion": ""
+          },
+          "verifiedAt": "",
+          "verifiedBy": ""
+        }
+      ]
+    }
+  ]
+}

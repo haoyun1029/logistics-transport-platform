@@ -1,0 +1,23 @@
+{
+  "name": "logistics-platform-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "test": "node tools/verify-portals.mjs",
+    "typecheck": "vue-tsc --noEmit",
+    "build": "npm run typecheck && vite build"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "vue": "3.5.13"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.21",
+    "@vitejs/plugin-vue": "5.2.1",
+    "typescript": "5.7.2",
+    "vite": "5.4.11",
+    "vue-tsc": "2.2.0"
+  }
+}
